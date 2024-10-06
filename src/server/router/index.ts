@@ -7,6 +7,10 @@ router.get('/', (_, res) => {
   res.status(202).send('Hello World!!!!!')
 })
 
-router.post('/cities', CitiesController.create)
+router.post(
+  '/cities',
+  CitiesController.createValidation,
+  CitiesController.create,
+)
 
 export { router }
