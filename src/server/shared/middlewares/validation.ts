@@ -37,7 +37,11 @@ export const validation: Validation =
       }
     })
     if (!Object.entries(errorsResult).length) {
+      console.log('passou')
+
       return next()
     }
+    console.log('negou')
+
     return res.status(StatusCodes.BAD_REQUEST).json({ errorsResult })
   }
